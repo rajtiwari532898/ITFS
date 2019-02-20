@@ -1,0 +1,74 @@
+<div xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ice="http://www.icesoft.com/icefaces/component">
+	
+	<ice:form id="cardLogin">
+	<f:view>
+	<!-- 	<f:loadBundle basename="ui.Messages" var="msg" /> -->
+		<br></br>
+			<ice:panelGroup><ice:messages id="err" errorClass="errors" showDetail="true" showSummary="false" style="color: red;"  />
+			</ice:panelGroup>
+		<ice:panelGrid styleClass="content">
+			<ice:panelGroup styleClass="contentheader">
+				<ice:outputText styleClass="headerTextLogin" value="Login Page" />	
+			</ice:panelGroup>	
+			
+			 <ice:panelGroup >	
+				<ice:panelGrid styleClass="pageWidth600" style="width:300px" columns="2"  >
+					
+					
+						
+						
+						
+						<ice:outputText styleClass="labelText" value="User ID" align="right" ></ice:outputText>
+						<ice:inputText  id="userId" align="left" partialSubmit="true"
+										required="true" styleClass="cmdTextStyle"
+										 value="#{LoginBean.userId}" maxlength="16" tabindex="100">
+						<f:attribute name="fieldRef" value="User ID" />
+						<f:attribute name="custMsg" value="Please enter Valid user ID" />
+						<!-- <f:validator validatorId="cardNumberValidator"/> -->
+						</ice:inputText>		
+					
+						
+						
+						<ice:outputText styleClass="labelText" value="Password"></ice:outputText>
+						<ice:inputSecret  id="password" align="left" partialSubmit="true"
+										required="true" styleClass="cmdTextStyle" value="#{LoginBean.password}" maxlength="16" tabindex="100">
+						<f:attribute name="fieldRef" value="Password" />
+						<f:attribute name="custMsg" value="Please enter Valid user ID" />
+						<!-- <f:validator validatorId="cardNumberValidator"/> -->
+						</ice:inputSecret>		
+						
+						<ice:outputText></ice:outputText>
+							<ice:panelGroup>
+							<ice:commandButton value="Login" action="#{LoginBean.getHomePage}"  styleClass="cmdButstyle" tabindex="500"/>
+							</ice:panelGroup>
+						
+						
+						
+					
+					
+
+					<br></br>
+					</ice:panelGrid>
+					<br></br>
+					
+					<ice:panelGrid styleClass="pageWidth858" columns="3" columnClasses="page858Col1,page858Col2,page858Col3">
+					
+					<ice:panelGroup></ice:panelGroup>
+					<ice:panelGroup>
+					<ice:outputLink value="http://www.adobe.com/products/acrobat/readstep2.html" target="_blank"><ice:graphicImage url="/theme/img/get_acrobat.gif" alt="get Adobe Reader" style="border:0px;width:88px;height:42px;"/></ice:outputLink>
+					<ice:outputLink value="http://www.microsoft.com/windows/ie/downloads/default.mspx" target="_blank"><ice:graphicImage url="/theme/img/get_ie7.gif" alt="Get Windows Internet Explorer" style="border:0px;width:88px;height:42px;"/></ice:outputLink>
+					<ice:outputLink value="http://en-us.www.mozilla.com/en-US/products/firefox/" target="_blank"><ice:graphicImage url="/theme/img/get_firefox.gif" alt="Get Firefox" style="border:0px;width:88px;height:42px;" /></ice:outputLink>
+					</ice:panelGroup>
+					<ice:panelGroup></ice:panelGroup>
+					</ice:panelGrid>
+				 </ice:panelGroup>
+		</ice:panelGrid> 
+			<!--  -->		
+		</f:view>
+		</ice:form>
+
+</div>	

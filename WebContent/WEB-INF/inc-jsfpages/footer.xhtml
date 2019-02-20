@@ -1,0 +1,48 @@
+<div xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ice="http://www.icesoft.com/icefaces/component">
+	<ice:form id="footerForm">
+	 
+	 <ice:panelGrid styleClass="footer" columns="3"  columnClasses="colFooterWidth1,colFooterWidth2,colFooterWidth1">
+	<ice:panelGroup ></ice:panelGroup>
+	<ice:panelGroup>
+		
+		<ice:panelGrid columns="6">
+			<ice:panelGroup>
+				<ice:commandLink value="Contact Us" styleClass="footerLink" action="#{footer.contactUsPage}"/>
+				<ice:outputText value="|" styleClass="footerText"/></ice:panelGroup>
+				<!-- <ice:commandLink  value="Help" styleClass="footerLink" action="#{footer.contactUs}"/> -->
+		<ice:panelGroup>
+		
+			<ice:outputResource styleClass="footerLink" id="pdf-image" fileName="FAQ"  resource="#{resourceBean.pdfResource}" mimeType="application/pdf" attachment="false"  shared="false"/>
+		</ice:panelGroup>
+		<ice:panelGroup>
+		<!-- <ice:outputText value="|" styleClass="footerText"/> -->
+		<ice:commandLink  value="Terms &amp; Condition" styleClass="footerLink" action="#{footer.termsCondn}"/>
+		<ice:outputText value="|" styleClass="footerText"/></ice:panelGroup>
+		<ice:panelGroup><ice:commandLink  value="About ITS Financials" styleClass="footerLink" action="#{footer.policy}"/>
+		<ice:outputText value="|" styleClass="footerText"/></ice:panelGroup>
+		<ice:panelGroup><ice:commandLink  value="Reports" styleClass="footerLink" action="#{footer.lostCardPage}"/>
+		<ice:outputText value="|" styleClass="footerText"/></ice:panelGroup>
+		<ice:panelGroup><ice:commandLink  value="Configuration" styleClass="footerLink" action="#{footer.disputeTrans}"/></ice:panelGroup>
+	</ice:panelGrid>
+	</ice:panelGroup>
+	<ice:panelGroup></ice:panelGroup>
+
+	<ice:panelGroup></ice:panelGroup>
+	<ice:panelGroup>
+	<ice:panelGrid columns="3" styleClass="footerNew" columnClasses="colFooterWidthNew1,colFooterWidthNew2,colFooterWidthNew1">
+	<ice:panelGroup></ice:panelGroup>
+	<ice:panelGroup>
+	<ice:graphicImage url="/theme/img/copyrite.GIF"/>
+		<ice:outputText value="2013-2014" styleClass="footerText1"></ice:outputText>
+		<ice:outputLink id="BLOutLnk" value="http://www.comdata.com/comdata/index.jsp" target="_blank" >
+		 <ice:outputText value="Tata Consultancy Services" styleClass="footerLink1"/></ice:outputLink>
+		<ice:outputText value="All rights reserved" styleClass="footerText1"></ice:outputText>
+	</ice:panelGroup>
+	<ice:panelGroup></ice:panelGroup>
+	</ice:panelGrid>
+	</ice:panelGroup>
+	<ice:panelGroup></ice:panelGroup>
+	</ice:panelGrid>
+	</ice:form>
+</div>

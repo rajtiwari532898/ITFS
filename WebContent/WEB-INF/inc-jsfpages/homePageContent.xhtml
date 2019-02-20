@@ -1,0 +1,59 @@
+<div xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ice="http://www.icesoft.com/icefaces/component">
+
+	<ice:form id="cardLogin">
+		<f:view>
+
+			<br></br>
+			<ice:panelGrid styleClass="content">
+				<ice:panelGroup styleClass="contentheader">
+					<ice:outputText styleClass="headerTextLogin">Welcome #{LoginBean.userId}</ice:outputText>
+				</ice:panelGroup>
+
+
+
+
+
+
+
+
+				<ice:panelGroup>
+					<ice:panelDivider id="icePnlDvr" dividerPosition="25"
+						orientation="vertical" style="width: 100%; height: 350px;">
+
+						<f:facet name="first">
+							<ice:panelGroup style="padding: 10px;">
+								<ice:menuBar id="menuBar" orientation="Vertical">
+									<ice:menuItem value="User Registration" id="userConfig" action="#{mainMenu.userRegistration}">
+									</ice:menuItem>
+									
+									<ice:menuItem value="Loan Requests" id="loanRequest" action="#{mainMenu.getRequestList}">
+									</ice:menuItem>
+									
+									<ice:menuItem value="Link To Department" id="dbConfig"  onclick="return true;" >
+									</ice:menuItem>
+									<ice:menuItem value="Edit Profile" id="configPath" onclick="return true;">
+									</ice:menuItem>
+									<ice:menuItem value="Transaction History" id="dataCompare" onclick="return true;">
+									</ice:menuItem>
+								</ice:menuBar>
+							</ice:panelGroup>
+						</f:facet>
+
+						<f:facet name="second">
+							<ice:panelGroup style="padding: 10px;">
+
+								<ice:outputText value="" style="line-height:2em" />
+							</ice:panelGroup>
+						</f:facet>
+					</ice:panelDivider>
+				</ice:panelGroup>
+
+
+			</ice:panelGrid>
+		</f:view>
+	</ice:form>
+</div>

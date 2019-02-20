@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ice="http://www.icesoft.com/icefaces/component">
+<head>
+<title><ui:insert name="title">ITS Financial</ui:insert></title>
+<!--link href="./xmlhttp/css/rime/rime.css" rel="stylesheet"
+	type="text/css" /-->
+<link href="theme/css/application.css" rel="stylesheet" type="text/css" />
+<link href="theme/css/default.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="mainBody">
+<div id="header"><ui:include
+	src="/WEB-INF/inc-jsfpages/header.xhtml"></ui:include></div>
+	<div id="menu"><ui:include
+	src="/WEB-INF/inc-jsfpages/header-menu.xhtml"></ui:include></div>
+<div id="bodyandhelp">
+
+<div id="bodyContent"><ui:insert name="content">
+	<h:panelGroup>
+					Default Content
+				</h:panelGroup>
+</ui:insert></div>
+</div>
+<div id="footer"><ui:include
+	src="/WEB-INF/inc-jsfpages/footerLogin.xhtml"></ui:include></div>
+</div>
+
+
+
+
+</body>
+</html>

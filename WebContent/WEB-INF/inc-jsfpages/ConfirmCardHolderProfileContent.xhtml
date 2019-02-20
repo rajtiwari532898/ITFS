@@ -1,0 +1,89 @@
+<div xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ice="http://www.icesoft.com/icefaces/component">
+	
+	<ice:form id="confirmProfileForm">
+	<f:view>
+		<f:loadBundle basename="ui.Messages" var="msg" />
+		<br></br>
+		<ice:panelGrid styleClass="content">
+				<ice:panelGroup styleClass="contentheader">
+					<ice:outputText styleClass="headerTextLogin" value="Edit Card Holder Profile - Step 2 of 2" />	
+				</ice:panelGroup>
+				<ice:panelGroup>
+					<ice:panelTabSet>
+                	<ice:panelTab styleClass="labelText" label="#{msg.acctHolder}">
+                		<ice:panelGrid styleClass="pageWidth800" columns="3" columnClasses="colDatapanelWidth1,colDatapanelWidth1,colDatapanelWidth1">
+                			<ice:panelGroup>
+								<ice:outputLabel styleClass="labelTextNew"
+								value="Name" />
+							</ice:panelGroup>
+							<ice:panelGroup><ice:outputLabel styleClass="labelTextNew"
+								value="Email Address" /></ice:panelGroup>
+							<ice:panelGroup><ice:outputLabel styleClass="labelTextNew"
+								value="Mailing/Billing Address" /></ice:panelGroup>
+							<ice:panelGroup>
+								<ice:outputText id="ClientName" styleClass="cmdTextStyle1" 
+				    					 value="#{editProfile.cdHolder.clientName}" readonly="true" ></ice:outputText>
+							</ice:panelGroup>
+							<ice:panelGroup>					
+								<ice:outputText id="eMailAdd" styleClass="cmdTextStyle1" 
+				    			 value="#{editProfile.cdHolder.eMailAdd}" readonly="true">
+				     			</ice:outputText>				     
+				     		</ice:panelGroup>
+							<ice:panelGroup><ice:outputText id="add1" styleClass="cmdTextStyle1" 
+				    		 value="#{editProfile.cdHolder.address1}" readonly="true" ></ice:outputText></ice:panelGroup>
+							<ice:panelGroup></ice:panelGroup>
+							<ice:panelGroup></ice:panelGroup>
+							<ice:panelGroup><ice:outputText id="add2" styleClass="cmdTextStyle1" 
+						     value="#{editProfile.cdHolder.address2}" readonly="true" ></ice:outputText></ice:panelGroup>
+							<ice:panelGroup></ice:panelGroup>
+							<ice:panelGroup></ice:panelGroup>
+							<ice:panelGroup><ice:outputText id="city" styleClass="cmdTextStyle1" 
+						     value="#{editProfile.cdHolder.city}" readonly="true" ></ice:outputText>
+						     <ice:outputText id="state" styleClass="cmdTextStyle1" 
+						     value="#{editProfile.cdHolder.state}" readonly="true" />
+						      <ice:outputText id="postalcode" styleClass="cmdTextStyle1" 
+						     value="#{editProfile.cdHolder.postalCode}" readonly="true" />
+						     </ice:panelGroup>
+							<ice:panelGroup><ice:outputLabel styleClass="labelTextNew"
+										value="Home Phone" /></ice:panelGroup>
+							<ice:panelGroup></ice:panelGroup>
+							<ice:panelGroup></ice:panelGroup>
+							<ice:panelGroup>
+							 <ice:outputText id="homePh" styleClass="cmdTextStyle1" 
+						     value="#{editProfile.cdHolder.homePhone}" readonly="true" />
+							</ice:panelGroup>
+							<ice:panelGroup></ice:panelGroup>
+							<ice:panelGroup></ice:panelGroup>
+                		</ice:panelGrid>
+                	</ice:panelTab>
+                	</ice:panelTabSet>
+             	</ice:panelGroup>
+					<ice:panelGroup></ice:panelGroup>
+        				<br></br>
+							<ice:panelGroup>
+        					<ice:panelGrid styleClass="pageWidth858" columns="3" columnClasses="page858Col1,page858Col2,page858Col3">
+        							<ice:panelGroup>
+										<ice:commandButton value="Cancel"
+									  	action = "#{editProfile.getHome}"
+										styleClass="cmdButstyle"/>					
+									</ice:panelGroup>	
+									<ice:panelGroup></ice:panelGroup>	
+									<ice:panelGroup>
+									<ice:commandButton value="Submit >>"
+												  action = "#{editProfile.updateProfile}"
+													styleClass="cmdButstyle" />
+									</ice:panelGroup>	
+		
+							</ice:panelGrid>
+							</ice:panelGroup>
+		
+		</ice:panelGrid>
+			
+		</f:view>
+		</ice:form>
+
+</div>	

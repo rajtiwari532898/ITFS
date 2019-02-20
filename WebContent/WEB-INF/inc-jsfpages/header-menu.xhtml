@@ -1,0 +1,24 @@
+<div xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ice="http://www.icesoft.com/icefaces/component">
+
+	<ice:form id="mainMenu">
+	<ice:panelGrid columns="3">
+		<ice:panelGroup id="icePnlTbOver" styleClass="activeMenuTabStyle" >
+			
+		</ice:panelGroup>
+		<ice:panelGroup id="icePnlTbOver" styleClass="activeMenuTabStyle" >										
+			
+		</ice:panelGroup>
+		
+		<ice:panelGroup styleClass="login_btn">
+			<ice:commandLink value="Go to Login Page" styleClass="nav_login" action="#{mainMenu.loginPage}"/>
+		</ice:panelGroup>	
+
+	</ice:panelGrid>
+	
+	
+</ice:form>
+</div>

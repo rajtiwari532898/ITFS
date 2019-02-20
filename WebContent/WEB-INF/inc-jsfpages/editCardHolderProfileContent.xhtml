@@ -1,0 +1,156 @@
+<div xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:hx="http://www.ibm.com/jsf/html_extended"
+	xmlns:ice="http://www.icesoft.com/icefaces/component">
+	
+	<ice:form id="editProfile">
+	<f:view>
+		<f:loadBundle basename="ui.Messages" var="msg" />
+			<br></br>
+		<ice:panelGroup><ice:messages id="err" errorClass="errors" showDetail="true" showSummary="false" style="color: red;"  />
+			</ice:panelGroup>
+			<ice:panelGrid styleClass="content">
+				<ice:panelGroup styleClass="contentheader">
+					<ice:outputText styleClass="headerTextLogin" value="Edit Card Holder Profile - Step 1 of 2" />	
+				</ice:panelGroup>
+				<ice:panelGroup>
+					<ice:panelGrid styleClass="pageWidth800" columns="2" columnClasses="colInPanelWidth2,colInPanelWidth1">
+						<ice:panelGroup>				
+						</ice:panelGroup>	
+						
+						<ice:panelGroup>
+							<ice:outputText styleClass="headerTextItalic" value="*#{msg.reqFields}" />
+						</ice:panelGroup>	
+					</ice:panelGrid>
+				</ice:panelGroup>	
+				<ice:panelGroup>
+					<ice:panelTabSet>
+                <ice:panelTab styleClass="labelText" label="#{msg.acctHolder}">
+                	<ice:panelGrid styleClass="pageWidth800" columns="2" columnClasses="colInDatapanelWidth,colInDatapanelWidth">
+                		<ice:panelGroup>
+						<ice:outputLabel styleClass="labelTextNew"
+								value="Name" /></ice:panelGroup>
+						<ice:panelGroup></ice:panelGroup>	
+						<ice:panelGroup>
+					<ice:outputText id="clientName" styleClass="cmdOutputTextStyle1" 
+				     value="#{editProfile.cdHolder.clientName}" readonly="true" ></ice:outputText>
+					</ice:panelGroup>
+					<ice:panelGroup></ice:panelGroup>
+					<ice:panelGroup></ice:panelGroup>
+					
+					<ice:panelGroup></ice:panelGroup>
+					<ice:panelGroup><ice:outputLabel styleClass="labelTextNew"
+								value="Email Address*" /></ice:panelGroup>
+					<ice:panelGroup><ice:outputLabel styleClass="labelTextNew"
+								value="Confirm Email Address*" /></ice:panelGroup>
+					
+					<ice:panelGroup><ice:inputText required ="true" id="EmailId" styleClass="cmdTextStyleNew" 
+							value="#{editProfile.cdHolder.eMailAdd}" maxlength="32" tabindex="1">	
+							<f:attribute name="custMsg" value="Please enter E Mail ID" />	
+							<f:attribute name="fieldRef" value="Email Id"/>						
+							<f:validator validatorId="EmailValidator"/>															
+							</ice:inputText></ice:panelGroup>
+					
+					<ice:panelGroup><ice:inputText required ="true" id="ConfirmEmailId" styleClass="cmdTextStyleNew" 
+							value="#{editProfile.confirmMailAdd}" maxlength="32" tabindex="2">						
+							<f:attribute name="fieldRef" value="Confirm Email Id" />	
+							<f:attribute name="custMsg" value="Please enter the Card Number" />	
+							<f:validator validatorId="EmailValidator"/>													
+							</ice:inputText></ice:panelGroup>
+							
+							<ice:panelGroup><ice:outputLabel styleClass="labelTextNew"
+								value="Home Phone*" /></ice:panelGroup>										
+					<ice:panelGroup></ice:panelGroup>
+					
+					<ice:panelGroup><ice:inputText required="true" id="Phone" styleClass="cmdTextStyleNew"  maxlength="32" tabindex="3"
+							value ="#{editProfile.homePhone}" partialSubmit="true" binding="#{editProfile.userNoComponent}"
+							valueChangeListener="#{editProfile.validatePhone}" immediate="true">		
+							<f:validator validatorId="PhoneValidation"/>		
+							<f:attribute name="fieldRef" value="Home Phone" />													
+							</ice:inputText>
+							
+							
+							</ice:panelGroup>
+					<ice:panelGroup></ice:panelGroup>					
+                	</ice:panelGrid> 
+                	
+                	 <!-- ice:panelGrid styleClass="pageWidth800" columns="1">
+						<ice:panelGroup>
+							<ice:outputLabel value="NOTE: Telephone numbers should be entered without spaces or charecters. (example:1234567890)" />
+						</ice:panelGroup>                	 
+                	 </ice:panelGrid-->                 	      
+                </ice:panelTab>
+            </ice:panelTabSet>
+			   </ice:panelGroup>
+			   <ice:panelGroup></ice:panelGroup>
+			   <br></br>	
+			   <ice:panelGroup>
+				<ice:panelTabSet>
+                	<ice:panelTab styleClass="labelText" label="#{msg.mailingAdd}">
+	                	<ice:panelGrid styleClass="pageWidth800" columns="3"> 
+	                		<ice:panelGroup><ice:outputLabel styleClass="labelTextNew"
+								value="Address Line 1*" /></ice:panelGroup>
+							<ice:panelGroup><ice:outputLabel styleClass="labelTextNew"
+								value="Address Line 2" /></ice:panelGroup>
+							<ice:panelGroup></ice:panelGroup>
+							
+							<ice:panelGroup>
+							<ice:inputText required="true" id="Address1" styleClass="cmdTextStyleNew"  tabindex="4"
+							value="#{editProfile.cdHolder.address1}" maxlength="60">	
+							<f:validator validatorId="AlphanumericValidation"/>		
+							<f:attribute name="fieldRef" value="Address 1" />															
+							</ice:inputText></ice:panelGroup>
+							<ice:panelGroup>
+							<ice:inputText id="Address2" styleClass="cmdTextStyleNew" 
+							value="#{editProfile.cdHolder.address2}" maxlength="60" tabindex="5">	
+							<f:validator validatorId="AlphanumericValidation"/>		
+							<f:attribute name="fieldRef" value="Address 2" />										
+							</ice:inputText></ice:panelGroup>
+							<ice:panelGroup></ice:panelGroup>
+							
+							<ice:panelGroup><ice:outputLabel styleClass="labelTextNew"
+								value="City*" /></ice:panelGroup>
+							<ice:panelGroup><ice:outputLabel styleClass="labelTextNew"
+								value="State*" />							
+								</ice:panelGroup>
+							<ice:panelGroup><ice:outputLabel styleClass="labelTextNew"
+								value="Zip/Postal Code*" /></ice:panelGroup>
+							<ice:panelGroup><ice:inputText required="true" id="city" styleClass="cmdTextStyleNew" tabindex="6"
+							value="#{editProfile.cdHolder.city}" maxlength="32">	
+							<f:validator validatorId="AlphanumericValidation"/>		
+							<f:attribute name="fieldRef" value="City" />														
+							</ice:inputText></ice:panelGroup>
+							<ice:panelGroup>
+								<ice:inputText required="true" id="state" styleClass="cmdTextStyleNew" 
+								value="#{editProfile.cdHolder.state}" maxlength="2" tabindex="7">
+								<f:validator validatorId="StateValidation"/>		
+								<f:attribute name="fieldRef" value="State" />	</ice:inputText>	
+							</ice:panelGroup>
+							<ice:panelGroup>
+							<ice:inputText required="true" id="postcode" styleClass="cmdTextStyleNew" 
+							value="#{editProfile.cdHolder.postalCode}" maxlength="5" tabindex="8">	
+							<f:validator validatorId="PostcodeValidation"/>		
+							<f:attribute name="fieldRef" value="Postal Code" />															
+							</ice:inputText></ice:panelGroup>
+							<ice:panelGroup></ice:panelGroup>
+							<BR></BR>
+	                	</ice:panelGrid>
+                	</ice:panelTab>
+                </ice:panelTabSet>
+        </ice:panelGroup>
+        <ice:panelGroup></ice:panelGroup>
+        <br></br>
+			   		<ice:panelGroup>
+        			<ice:panelGrid styleClass="pageWidth858" columns="3" columnClasses="page858Col1,page858Col2,page858Col3">
+						<ice:panelGroup><ice:commandButton value="Cancel" immediate="true" action="#{editProfile.getHome}" styleClass="cmdButstyle" tabindex="9"/></ice:panelGroup>
+						<ice:panelGroup></ice:panelGroup>
+						<ice:panelGroup><ice:commandButton value="Continue >>" action="#{editProfile.continueProfile}" styleClass="cmdButstyle" tabindex="10"/></ice:panelGroup>
+					</ice:panelGrid>
+        		</ice:panelGroup>            
+			</ice:panelGrid>		
+		</f:view>
+		</ice:form>
+
+</div>	

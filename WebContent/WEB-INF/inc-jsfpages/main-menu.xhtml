@@ -1,0 +1,52 @@
+<div xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ice="http://www.icesoft.com/icefaces/component">
+	<ice:form style="margin: 0px;" id="mainMenu">
+	 <!-- f:view>
+	<f:loadBundle basename="ui.Messages" var="msg" /-->
+	<ice:panelGrid columns="7" >
+		<ice:panelGroup id="icePnlTbOver1">
+			<ice:commandLink value="Home" styleClass="activeMenuTabStyle"  onclick="return true;"/>
+		</ice:panelGroup>
+		<ice:panelGroup id="icePnlTbOver1">										
+			<ice:commandLink value="Services" styleClass="activeMenuTabStyle" onclick="return true;"/>
+		</ice:panelGroup>
+		
+		<ice:panelGroup id="icePnlTbOver1">										
+			<ice:commandLink value="FAQ" styleClass="activeMenuTabStyle" onclick="return true;"/>
+		</ice:panelGroup>
+		
+		
+		<ice:panelGroup id="icePnlTbOver1">										
+			<ice:commandLink value="Corporate" styleClass="activeMenuTabStyle" onclick="return true;"/>
+		</ice:panelGroup>
+		
+		
+		<ice:panelGroup id="icePnlTbOver1">										
+			<ice:commandLink value="Profile" styleClass="activeMenuTabStyle" onclick="return true;"/>
+		</ice:panelGroup>
+		
+		
+		
+		<ice:panelGroup id="icePnlTbOver1">										
+			<ice:commandLink value="ITS Collect" styleClass="activeMenuTabStyle" onclick="return true;"/>
+		</ice:panelGroup>
+		
+		<ice:panelGroup id="icePnlTbOver1">                                     
+            <ice:commandLink value="Portfolio Management" styleClass="activeMenuTabStyle" action="#{mainMenu.portfolioMgm}"/>
+        </ice:panelGroup>
+        
+        <ice:panelGroup id="icePnlTbOver1">                                     
+            <ice:commandLink value="Historical Analysis" styleClass="activeMenuTabStyle" onclick="return true;"/>
+        </ice:panelGroup>
+		
+		<ice:panelGroup id="icePnlTbOver2" styleClass="logout_btn">
+			<ice:commandLink value="Log Out" styleClass="nav_logout" action="#{mainMenu.logout}"/>
+			</ice:panelGroup>	
+
+	</ice:panelGrid>
+	<!-- /f:view-->
+</ice:form>
+</div>

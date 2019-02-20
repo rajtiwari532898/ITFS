@@ -1,0 +1,415 @@
+<div xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ice="http://www.icesoft.com/icefaces/component">
+
+	<ice:form id="userRegistration">
+		<f:view>
+
+			<style>
+.parentGrid .icePnlGrdCol1 {
+	vertical-align: top;
+}
+</style>
+
+
+
+			<br></br>
+			<ice:panelGroup>
+				<ice:messages id="err" errorClass="errors" showDetail="true"
+					showSummary="false" style="color: red;" />
+			</ice:panelGroup>
+			<ice:panelGrid styleClass="content">
+
+				<ice:panelGroup>
+					<ice:panelDivider id="icePnlDvr" dividerPosition="25"
+						orientation="vertical" style="width: 100%; height: 500px;">
+
+						<f:facet name="first">
+							<ice:panelGroup style="padding: 10px;">
+								<ice:menuBar id="menuBar" orientation="Vertical">
+									<ice:menuItem value="User Registration" id="userConfig"
+										action="#{mainMenu.userRegistration}">
+									</ice:menuItem>
+									
+									<ice:menuItem value="Loan Requests" id="loanRequest" action="#{mainMenu.getRequestList}">
+									</ice:menuItem>
+									
+									
+									<ice:menuItem value="Link To Department" id="dbConfig"
+										onclick="return true;">
+									</ice:menuItem>
+									<ice:menuItem value="Edit Profile" id="configPath"
+										onclick="return true;">
+									</ice:menuItem>
+									<ice:menuItem value="Transaction History" id="dataCompare"
+										onclick="return true;">
+									</ice:menuItem>
+								</ice:menuBar>
+							</ice:panelGroup>
+						</f:facet>
+
+						<f:facet name="second">
+							<ice:panelGroup style="padding: 10px;">
+
+					<ice:panelGrid styleClass="parentGrid" columns="6">
+
+								<ice:outputText styleClass="headerTextLogin_reg" colspan="6"
+									value="Basic Details" />
+										<ice:outputText></ice:outputText>
+										<ice:outputText></ice:outputText>	
+										<ice:outputText></ice:outputText>
+										<ice:outputText></ice:outputText>
+										<ice:outputText></ice:outputText>
+											
+									
+								
+
+									<ice:outputText styleClass="labelText_reg" align="right"
+										value="First Name *"></ice:outputText>
+									<ice:inputText id="firstName" align="left" partialSubmit="true"
+										required="true" styleClass="cmdTextStyle_reg"
+										value="#{customer.firstName}" maxlength="16" tabindex="100">
+										<f:attribute name="fieldRef" value="First Name" />
+										<f:attribute name="msgFirstName"
+											value="Please enter the First Name" />
+										<f:validator validatorId="AlphanumericValidation" />
+									</ice:inputText>
+
+
+									<ice:outputText styleClass="labelText_reg" align="right"
+										value="Middle Name"></ice:outputText>
+									<ice:inputText id="password" align="left"
+										styleClass="cmdTextStyle_reg" value="#{customer.middleName}"
+										maxlength="16" tabindex="100">
+										<f:attribute name="fieldRef" value="Middle Name" />
+
+									</ice:inputText>
+
+
+									<ice:outputText styleClass="labelText_reg" value="Last Name"
+										align="right"></ice:outputText>
+									<ice:inputText id="lastName" align="left"
+										styleClass="cmdTextStyle_reg" value="#{customer.lastName}"
+										maxlength="16" tabindex="100">
+										<f:attribute name="fieldRef" value="Last Name" />
+									</ice:inputText>
+
+
+
+
+
+
+
+
+									<ice:outputText styleClass="labelText_reg" value="Gender *"
+										align="right"></ice:outputText>
+
+									<ice:selectOneMenu value="#{customer.gender}"
+										styleClass="SelectOneMenu_reg" align="left">
+										<f:selectItem itemValue="1" itemLabel="Male" />
+										<f:selectItem itemValue="2" itemLabel="Female" />
+
+										<f:attribute name="msgGender" value="Please select Gender" />
+									</ice:selectOneMenu>
+
+									<ice:outputText styleClass="labelText_reg" value="Age *"
+										align="right"></ice:outputText>
+									<ice:inputText id="age" align="left" partialSubmit="true"
+										required="true" styleClass="cmdTextStyle_reg"
+										value="#{customer.age}" maxlength="16" tabindex="100">
+										<f:attribute name="fieldRef" value="Age" />
+										<f:attribute name="msgAge" value="Please select Gender" />
+										<f:validator validatorId="NumericValidation" />
+									</ice:inputText>
+
+									<ice:outputText styleClass="labelText_reg" value="Job Type *"
+										align="right"></ice:outputText>
+									<ice:selectOneMenu value="#{customer.jobType}" align="left"
+										styleClass="SelectOneMenu_reg">
+										<f:selectItem itemValue="1" itemLabel="Salaried" />
+										<f:selectItem itemValue="2" itemLabel="Goverment Employed" />
+										<f:selectItem itemValue="3" itemLabel="Bussiness" />
+
+										<f:attribute name="msgJobType" value="Please select Job Type" />
+									</ice:selectOneMenu>
+
+
+
+
+
+									<ice:outputText styleClass="labelText_reg"
+										value="Email *"></ice:outputText>
+									<ice:inputText id="Email" align="left"
+										styleClass="cmdTextStyle_reg" partialSubmit="true"
+										value="#{customer.email}" maxlength="500" required="true"
+										tabindex="100">
+										<f:attribute name="fieldRef" value="Email" />
+										<f:validator validatorId="EmailValidator" />
+									</ice:inputText>
+
+									<ice:outputText styleClass="labelText_reg"
+										value="Annual Income*"></ice:outputText>
+									<ice:inputText id="annualIncome" align="left" partialSubmit="true" required="true"
+										styleClass="cmdTextStyle_reg" value="#{customer.annualIncome}"
+										maxlength="16" tabindex="100">
+										<f:attribute name="fieldRef" value="Annual Income" />
+
+										<f:validator validatorId="DoubleValidator" />
+									</ice:inputText>
+
+									<ice:outputText styleClass="labelText_reg"
+										value="Annual Expense*"></ice:outputText>
+									<ice:inputText id="annualExpense" align="left"
+										styleClass="cmdTextStyle_reg"  partialSubmit="true" required="true"
+										value="#{customer.annualExpence}" maxlength="16"
+										tabindex="100">
+										<f:attribute name="fieldRef" value="Annual Expense" />
+										<f:validator validatorId="DoubleValidator" />
+									</ice:inputText>
+
+									
+
+
+								
+							
+								<ice:outputText styleClass="headerTextLogin_reg"
+									value="Additional Details" />
+
+										<ice:outputText></ice:outputText>
+										<ice:outputText></ice:outputText>	
+										<ice:outputText></ice:outputText>
+										<ice:outputText></ice:outputText>
+										<ice:outputText></ice:outputText>
+								
+
+									<ice:outputText styleClass="labelText_reg"
+										value="Street Line 1 *"></ice:outputText>
+									<ice:inputText id="line1" align="left" partialSubmit="true"
+										required="true" styleClass="cmdTextStyle_reg"
+										value="#{customer.line1}" maxlength="16" tabindex="100">
+										<f:attribute name="fieldRef" value="Line1" />
+
+										<f:attribute name="msgJobLine1"
+											value="Please Fill Street Line 1" />
+									</ice:inputText>
+
+									<ice:outputText styleClass="labelText_reg"
+										value="Street Line 2"></ice:outputText>
+									<ice:inputText id="line2" align="left"
+										styleClass="cmdTextStyle_reg" value="#{customer.line2}"
+										maxlength="16" tabindex="100">
+										<f:attribute name="fieldRef" value="Line2" />
+									</ice:inputText>
+
+									<ice:outputText styleClass="labelText_reg" value="City *"></ice:outputText>
+									<ice:inputText id="city" align="left" partialSubmit="true"
+										required="true" styleClass="cmdTextStyle_reg"
+										value="#{customer.city}" maxlength="16" tabindex="100">
+										<f:attribute name="fieldRef" value="City" />
+										<f:attribute name="msgCity" value="Please Fill City" />
+										<f:validator validatorId="AlphanumericValidation" />
+									</ice:inputText>
+
+
+
+									<ice:outputText styleClass="labelText_reg" value="State *"></ice:outputText>
+									<ice:inputText id="state" align="left" partialSubmit="true"
+										required="true" styleClass="cmdTextStyle_reg"
+										value="#{customer.state}" maxlength="16" tabindex="100">
+										<f:attribute name="fieldRef" value="State" />
+										<f:attribute name="msgState" value="Please Fill State" />
+										<f:validator validatorId="AlphanumericValidation" />
+									</ice:inputText>
+
+									<ice:outputText styleClass="labelText_reg" value="Country *"></ice:outputText>
+									<ice:inputText id="country" align="left" partialSubmit="true"
+										required="true" styleClass="cmdTextStyle_reg"
+										value="#{customer.country}" maxlength="16" tabindex="100">
+										<f:attribute name="fieldRef" value="Country" />
+										<f:attribute name="msgCountry" value="Please Fill Country" />
+										<f:validator validatorId="AlphanumericValidation" />
+									</ice:inputText>
+
+									<ice:outputText styleClass="labelText_reg" value="Zip Code"></ice:outputText>
+									<ice:inputText id="pinCode" align="left"
+										styleClass="cmdTextStyle_reg" value="#{customer.pinCode}"
+										maxlength="16" tabindex="100">
+										<f:attribute name="fieldRef" value="Pin Code" />
+										<f:validator validatorId="PostcodeValidation" />
+
+									</ice:inputText>
+
+
+
+									<ice:outputText styleClass="labelText_reg" value="Mobile No *"></ice:outputText>
+									<ice:inputText id="mobileNo" align="left" partialSubmit="true"
+										required="true" styleClass="cmdTextStyle_reg"
+										value="#{customer.mobileNo}" maxlength="16" tabindex="100">
+										<f:attribute name="fieldRef" value="Mobile No" />
+										<f:attribute name="msgMobileNo" value="Please Fill Mobile No" />
+										<f:validator validatorId="PhoneValidation" />
+									</ice:inputText>
+
+									<ice:outputText styleClass="labelText_reg" value="Passport No"></ice:outputText>
+									<ice:inputText id="passportNo" align="left"
+										styleClass="cmdTextStyle_reg" value="#{customer.passportNo}"
+										maxlength="16" tabindex="100">
+										<f:attribute name="fieldRef" value="Mobile No" />
+
+									</ice:inputText>
+
+
+									<ice:outputText styleClass="labelText_reg"
+										value="Passport Country"></ice:outputText>
+									<ice:inputText id="passportCountry" align="left"
+										styleClass="cmdTextStyle_reg"
+										value="#{customer.passportCountry}" maxlength="16"
+										tabindex="100">
+										<f:attribute name="fieldRef" value="Mobile No" />
+
+									</ice:inputText>
+
+
+
+
+
+									<ice:outputText styleClass="labelText_reg" value="SSN *"></ice:outputText>
+									<ice:inputText id="ssn" align="left" partialSubmit="true"
+										required="true" styleClass="cmdTextStyle_reg"
+										value="#{customer.ssn}" maxlength="16" tabindex="100">
+										<f:attribute name="fieldRef" value="SSN" />
+										<f:attribute name="msgSsn" value="Please Fill SSN" />
+									</ice:inputText>
+
+									<ice:outputText styleClass="labelText_reg" value="DL No"></ice:outputText>
+									<ice:inputText id="dlNo" align="left"
+										styleClass="cmdTextStyle_reg" value="#{customer.dlNo}"
+										maxlength="16" tabindex="100">
+										<f:attribute name="fieldRef" value="DL No" />
+
+									</ice:inputText>
+
+									<ice:outputText></ice:outputText>
+									<ice:outputText></ice:outputText>	
+								
+								<ice:outputText styleClass="headerTextLogin_reg" colspan="6"
+									value="Bank Details" />
+									<ice:outputText></ice:outputText>
+										<ice:outputText></ice:outputText>	
+										<ice:outputText></ice:outputText>
+										<ice:outputText></ice:outputText>
+										<ice:outputText></ice:outputText>
+								
+									<ice:outputText styleClass="labelText_reg" value="Bank Name"></ice:outputText>
+									<ice:inputText id="bankName" align="left"
+										styleClass="cmdTextStyle_reg" value="#{customer.bankName}"
+										maxlength="16" tabindex="100">
+										<f:attribute name="fieldRef" value="Bank Name" />
+
+									</ice:inputText>
+
+									<ice:outputText styleClass="labelText_reg" value="Branch"></ice:outputText>
+									<ice:inputText id="branch" align="left"
+										styleClass="cmdTextStyle_reg" value="#{customer.branch}"
+										maxlength="16" tabindex="100">
+										<f:attribute name="fieldRef" value="Bank Branch" />
+
+									</ice:inputText>
+
+									<ice:outputText styleClass="labelText_reg" value="Account No"></ice:outputText>
+									<ice:inputText id="accountNo" align="left"
+										styleClass="cmdTextStyle_reg" value="#{customer.accountNo}"
+										maxlength="16" tabindex="100">
+										<f:attribute name="fieldRef" value="Account No" />
+
+									</ice:inputText>
+
+
+
+								
+								
+								<ice:outputText styleClass="headerTextLogin_reg" colspan="6"
+									value="Loan Details" />
+
+								<ice:outputText></ice:outputText>
+										<ice:outputText></ice:outputText>	
+										<ice:outputText></ice:outputText>
+										<ice:outputText></ice:outputText>
+										<ice:outputText></ice:outputText>
+							
+
+
+									<ice:outputText styleClass="labelText_reg" value="Loan Type *"></ice:outputText>
+
+									<ice:selectOneMenu value="#{customer.loanType}" align="left"
+										styleClass="SelectOneMenu_reg">
+										<f:selectItem itemValue="1" itemLabel="Home Loan" />
+										<f:selectItem itemValue="2" itemLabel="Car Loan" />
+										<f:selectItem itemValue="3" itemLabel="Credit Card Loan" />
+
+										<f:attribute name="msgLoanType"
+											value="Please select Loan Type" />
+									</ice:selectOneMenu>
+
+
+									<ice:outputText styleClass="labelText_reg"
+										value="Loan Amount *"></ice:outputText>
+									<ice:inputText id="loanAmount" align="left"
+										partialSubmit="true" required="true"
+										styleClass="cmdTextStyle_reg" value="#{customer.loanAmount}"
+										maxlength="16" tabindex="100">
+										<f:attribute name="fieldRef" value="Loan Amount" />
+										<f:attribute name="msgLoanAmount"
+											value="Please Fill Loan Amount" />
+										<f:validator validatorId="DoubleValidator" />
+
+									</ice:inputText>
+
+									<ice:outputText styleClass="labelText_reg"
+										value="Loan Tenure *"></ice:outputText>
+									<ice:inputText id="loanTenure" align="left"
+										partialSubmit="true" required="true"
+										styleClass="cmdTextStyle_reg" value="#{customer.loanTenure}"
+										maxlength="16" tabindex="100">
+										<f:attribute name="fieldRef" value="Loan Tenure" />
+										<f:attribute name="msgLoanTenure"
+											value="Please Fill Loan Tenure" />
+										<f:validator validatorId="NumericValidation" />
+
+									</ice:inputText>
+
+
+									<ice:outputText styleClass="labelText_reg" value="Remarks"></ice:outputText>
+
+									<ice:inputTextarea  style="margin:20px;" id="remarks"
+										align="left" value="#{customer.remarks}" tabindex="100">
+										<f:attribute name="fieldRef" value="Remarks" />
+									
+									
+									
+									</ice:inputTextarea>
+									<ice:outputText value=""></ice:outputText>
+									<ice:outputText value=""></ice:outputText>
+									<ice:outputText value=""></ice:outputText>
+									<ice:outputText value=""></ice:outputText>
+								<f:facet name="footer" >
+									<ice:panelGroup>
+										<ice:commandButton value="Submit" style="display:block; text-align:center;margin-left:400px"
+											action="#{customer.submitDetails}" styleClass="cmdButstyle"
+											tabindex="500" />
+									</ice:panelGroup>
+									
+									</f:facet>
+									<br></br>
+								</ice:panelGrid>
+
+							</ice:panelGroup>
+						</f:facet>
+					</ice:panelDivider>
+				</ice:panelGroup>
+			</ice:panelGrid>
+		</f:view>
+	</ice:form>
+</div>

@@ -1,0 +1,333 @@
+<div xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ice="http://www.icesoft.com/icefaces/component">
+
+	<ice:form id="userRegistration">
+		<f:view>
+
+			<style>
+.parentGrid .icePnlGrdCol1 {
+	vertical-align: top;
+}
+</style>
+
+
+
+			<br></br>
+			<ice:panelGroup>
+				<ice:messages id="err" errorClass="errors" showDetail="true"
+					showSummary="false" style="color: red;" />
+			</ice:panelGroup>
+			<ice:panelGrid styleClass="content">
+
+				<ice:panelGroup>
+					<ice:panelDivider id="icePnlDvr" dividerPosition="25"
+						orientation="vertical" style="width: 100%; height: 500px;">
+
+						<f:facet name="first">
+							<ice:panelGroup style="padding: 10px;">
+								<ice:menuBar id="menuBar" orientation="Vertical">
+									<ice:menuItem value="Target Goal" id="userConfig"
+										action="#{mainMenu.userRegistration}">
+									</ice:menuItem>
+									
+									<ice:menuItem value="Create Portfolio" id="loanRequest" action="#{mainMenu.getRequestList}">
+									</ice:menuItem>
+									
+									
+									<ice:menuItem value="Manage Portfolio" id="dbConfig"
+										onclick="return true;">
+									</ice:menuItem>
+									<ice:menuItem value="Transaction History" id="dataCompare"
+										onclick="return true;">
+									</ice:menuItem>
+								</ice:menuBar>
+							</ice:panelGroup>
+						</f:facet>
+
+						<f:facet name="second">
+							<ice:panelGroup style="padding: 10px;">
+
+					<ice:panelGrid styleClass="parentGrid" columns="6">
+
+								<ice:outputText styleClass="headerTextLogin_reg" colspan="6"
+									value="Basic Details" />
+										<ice:outputText></ice:outputText>
+										<ice:outputText></ice:outputText>	
+										<ice:outputText></ice:outputText>
+										<ice:outputText></ice:outputText>
+										<ice:outputText></ice:outputText>
+											
+									
+								
+
+									<ice:outputText styleClass="labelText_reg" align="right"
+										value="First Name *"></ice:outputText>
+									<ice:inputText id="firstName" align="left" partialSubmit="true"
+										required="true" styleClass="cmdTextStyle_reg"
+										value="#{portfolio.firstName}" maxlength="16" tabindex="100">
+										<f:attribute name="fieldRef" value="First Name" />
+										<f:attribute name="msgFirstName"
+											value="Please enter the First Name" />
+										<f:validator validatorId="AlphanumericValidation" />
+									</ice:inputText>
+
+
+									<ice:outputText styleClass="labelText_reg" align="right"
+										value="Middle Name"></ice:outputText>
+									<ice:inputText id="password" align="left"
+										styleClass="cmdTextStyle_reg" value="#{portfolio.middleName}"
+										maxlength="16" tabindex="100">
+										<f:attribute name="fieldRef" value="Middle Name" />
+
+									</ice:inputText>
+
+
+									<ice:outputText styleClass="labelText_reg" value="Last Name"
+										align="right"></ice:outputText>
+									<ice:inputText id="lastName" align="left"
+										styleClass="cmdTextStyle_reg" value="#{portfolio.lastName}"
+										maxlength="16" tabindex="100">
+										<f:attribute name="fieldRef" value="Last Name" />
+									</ice:inputText>
+
+
+
+
+
+
+
+
+									<ice:outputText styleClass="labelText_reg" value="Gender *"
+										align="right"></ice:outputText>
+
+									<ice:selectOneMenu value="#{portfolio.gender}"
+										styleClass="SelectOneMenu_reg" align="left">
+										<f:selectItem itemValue="1" itemLabel="Male" />
+										<f:selectItem itemValue="2" itemLabel="Female" />
+
+										<f:attribute name="msgGender" value="Please select Gender" />
+									</ice:selectOneMenu>
+
+									<ice:outputText styleClass="labelText_reg" value="Age *"
+										align="right"></ice:outputText>
+									<ice:inputText id="age" align="left" partialSubmit="true"
+										required="true" styleClass="cmdTextStyle_reg"
+										value="#{portfolio.age}" maxlength="16" tabindex="100">
+										<f:attribute name="fieldRef" value="Age" />
+										<f:attribute name="msgAge" value="Please select Gender" />
+										<f:validator validatorId="NumericValidation" />
+									</ice:inputText>
+
+									<ice:outputText styleClass="labelText_reg" value="Job Type *"
+										align="right"></ice:outputText>
+									<ice:selectOneMenu value="#{portfolio.jobType}" align="left"
+										styleClass="SelectOneMenu_reg">
+										<f:selectItem itemValue="1" itemLabel="Salaried" />
+										<f:selectItem itemValue="2" itemLabel="Goverment Employed" />
+										<f:selectItem itemValue="3" itemLabel="Bussiness" />
+
+										<f:attribute name="msgJobType" value="Please select Job Type" />
+									</ice:selectOneMenu>
+
+
+
+
+
+									<ice:outputText styleClass="labelText_reg"
+										value="Email *"></ice:outputText>
+									<ice:inputText id="Email" align="left"
+										styleClass="cmdTextStyle_reg" partialSubmit="true"
+										value="#{portfolio.email}" maxlength="500" required="true"
+										tabindex="100">
+										<f:attribute name="fieldRef" value="Email" />
+										<f:validator validatorId="EmailValidator" />
+									</ice:inputText>
+
+							
+							        <ice:outputText></ice:outputText>
+                                    <ice:outputText></ice:outputText>
+
+									
+                                    <ice:outputText></ice:outputText>
+                                    <ice:outputText></ice:outputText>
+
+								
+							
+								<ice:outputText styleClass="headerTextLogin_reg"
+									value="Fixed Income" />
+
+										<ice:outputText></ice:outputText>
+										<ice:outputText></ice:outputText>	
+										<ice:outputText></ice:outputText>
+										<ice:outputText></ice:outputText>
+										<ice:outputText></ice:outputText>
+								
+
+									<ice:outputText styleClass="labelText_reg"
+										value="Amount"></ice:outputText>
+									<ice:inputText id="line1" align="left" partialSubmit="true"
+										required="true" styleClass="cmdTextStyle_reg"
+										value="#{portfolio.fixedIncomeAmount}" maxlength="16" tabindex="100">
+										<f:attribute name="fieldRef" value="Amount" />
+
+										<f:attribute name="msgJobLine1"
+											value="Please Enter Valid Amount" />
+									</ice:inputText>
+
+									<ice:outputText styleClass="labelText_reg"
+										value="Annual Interest"></ice:outputText>
+									<ice:inputText id="line2" align="left"
+										styleClass="cmdTextStyle_reg" value="#{portfolio.anualIntrestRate}"
+										maxlength="16" tabindex="100">
+										<f:attribute name="fieldRef" value="Annual Intrest" />
+									</ice:inputText>
+
+
+									<ice:outputText></ice:outputText>
+									<ice:outputText></ice:outputText>	
+								
+								<ice:outputText styleClass="headerTextLogin_reg" colspan="6"
+                                    value="Commodity Investment" />
+                                    <ice:outputText></ice:outputText>
+                                        <ice:outputText></ice:outputText>   
+                                        <ice:outputText></ice:outputText>
+                                        <ice:outputText></ice:outputText>
+                                        <ice:outputText></ice:outputText>
+                                
+                                    <ice:outputText styleClass="labelText_reg" value="Gold (in grams)"></ice:outputText>
+                                    <ice:inputText id="bankName" align="left"
+                                        styleClass="cmdTextStyle_reg" value="#{portfolio.goldInGrams}"
+                                        maxlength="16" tabindex="100">
+                                        <f:attribute name="fieldRef" value="Gold in grams" />
+
+                                    </ice:inputText>
+
+                                    <ice:outputText styleClass="labelText_reg" value="Siver (in grams)"></ice:outputText>
+                                    <ice:inputText id="branch" align="left"
+                                        styleClass="cmdTextStyle_reg" value="#{portfolio.silverInGrams}"
+                                        maxlength="16" tabindex="100">
+                                        <f:attribute name="fieldRef" value="Silver in grams" />
+
+                                    </ice:inputText>
+
+                                    
+                                    <ice:outputText></ice:outputText>
+                                    <ice:outputText></ice:outputText>   
+                                    
+                                    <ice:outputText styleClass="headerTextLogin_reg" colspan="6"
+                                    value="Forex Investment" />
+                                    <ice:outputText></ice:outputText>
+                                        <ice:outputText></ice:outputText>   
+                                        <ice:outputText></ice:outputText>
+                                        <ice:outputText></ice:outputText>
+                                        <ice:outputText></ice:outputText>
+                                
+                                    <ice:outputText styleClass="labelText_reg" value="GBP"></ice:outputText>
+                                    <ice:inputText id="bankName" align="left"
+                                        styleClass="cmdTextStyle_reg" value="#{portfolio.gbp}"
+                                        maxlength="16" tabindex="100">
+                                        <f:attribute name="fieldRef" value="GBP" />
+
+                                    </ice:inputText>
+
+                                    <ice:outputText styleClass="labelText_reg" value="USD"></ice:outputText>
+                                    <ice:inputText id="branch" align="left"
+                                        styleClass="cmdTextStyle_reg" value="#{portfolio.usd}"
+                                        maxlength="16" tabindex="100">
+                                        <f:attribute name="fieldRef" value="USD" />
+
+                                    </ice:inputText>
+
+                                    <ice:outputText styleClass="labelText_reg" value="INR"></ice:outputText>
+                                    <ice:inputText id="accountNo" align="left"
+                                        styleClass="cmdTextStyle_reg" value="#{portfolio.inr}"
+                                        maxlength="16" tabindex="100">
+                                        <f:attribute name="fieldRef" value="INR" />
+
+                                    </ice:inputText>
+
+
+
+								
+								
+								<ice:outputText styleClass="headerTextLogin_reg" colspan="6"
+									value="Equity Investment" />
+
+								<ice:outputText></ice:outputText>
+										<ice:outputText></ice:outputText>	
+										<ice:outputText></ice:outputText>
+										<ice:outputText></ice:outputText>
+										<ice:outputText></ice:outputText>
+							
+
+
+								
+
+
+									<ice:outputText styleClass="labelText_reg"
+										value="Large Capital Fund"></ice:outputText>
+									<ice:inputText id="loanAmount" align="left"
+										partialSubmit="true" required="true"
+										styleClass="cmdTextStyle_reg" value="#{portfolio.lcf}"
+										maxlength="16" tabindex="100">
+										<f:attribute name="fieldRef" value=" Large Investment" />
+										<f:attribute name="msgLoanAmount"
+											value="Please Fill Loan Amount" />
+										<f:validator validatorId="DoubleValidator" />
+
+									</ice:inputText>
+									
+									<ice:outputText styleClass="labelText_reg"
+                                        value="Medium Cap Fund"></ice:outputText>
+                                    <ice:inputText id="loanAmount" align="left"
+                                        partialSubmit="true" required="true"
+                                        styleClass="cmdTextStyle_reg" value="#{portfolio.mcf}"
+                                        maxlength="16" tabindex="100">
+                                        <f:attribute name="fieldRef" value="Medium Investment" />
+                                        <f:attribute name="msgLoanAmount"
+                                            value="Please Fill Loan Amount" />
+                                        <f:validator validatorId="DoubleValidator" />
+
+                                    </ice:inputText>
+                                    
+                                    <ice:outputText styleClass="labelText_reg"
+                                        value="Small Cap Fund"></ice:outputText>
+                                    <ice:inputText id="loanAmount" align="left"
+                                        partialSubmit="true" required="true"
+                                        styleClass="cmdTextStyle_reg" value="#{portfolio.scf}"
+                                        maxlength="16" tabindex="100">
+                                        <f:attribute name="fieldRef" value="small Investment" />
+                                        <f:attribute name="msgLoanAmount"
+                                            value="Please Fill Loan Amount" />
+                                        <f:validator validatorId="DoubleValidator" />
+
+                                    </ice:inputText>
+                                    
+                                    
+
+									<ice:outputText value=""></ice:outputText>
+									<ice:outputText value=""></ice:outputText>
+									<ice:outputText value=""></ice:outputText>
+									<ice:outputText value=""></ice:outputText>
+								<f:facet name="footer" >
+									<ice:panelGroup>
+										<ice:commandButton value="Submit" style="display:block; text-align:center;margin-left:400px"
+											action="#{portfolio.submitDetails}" styleClass="cmdButstyle"
+											tabindex="500" />
+									</ice:panelGroup>
+									
+									</f:facet>
+									<br></br>
+								</ice:panelGrid>
+
+							</ice:panelGroup>
+						</f:facet>
+					</ice:panelDivider>
+				</ice:panelGroup>
+			</ice:panelGrid>
+		</f:view>
+	</ice:form>
+</div>

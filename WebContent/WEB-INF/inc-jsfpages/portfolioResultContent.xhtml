@@ -1,0 +1,234 @@
+<div xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ice="http://www.icesoft.com/icefaces/component">
+
+	<ice:form id="userRegistration">
+		<f:view>
+
+			<style>
+.parentGrid .icePnlGrdCol1 {
+	vertical-align: top;
+}
+</style>
+
+
+
+			<br></br>
+			<ice:panelGroup>
+				<ice:messages id="err" errorClass="errors" showDetail="true"
+					showSummary="false" style="color: red;" />
+			</ice:panelGroup>
+			<ice:panelGrid styleClass="content">
+
+				<ice:panelGroup>
+					<ice:panelDivider id="icePnlDvr" dividerPosition="25"
+						orientation="vertical" style="width: 100%; height: 500px;">
+
+						<f:facet name="first">
+							<ice:panelGroup style="padding: 10px;">
+								<ice:menuBar id="menuBar" orientation="Vertical">
+									<ice:menuItem value="Target Goal" id="userConfig"
+										action="#{mainMenu.userRegistration}">
+									</ice:menuItem>
+									
+									<ice:menuItem value="Create Portfolio" id="loanRequest" action="#{mainMenu.getRequestList}">
+									</ice:menuItem>
+									
+									
+									<ice:menuItem value="Manage Portfolio" id="dbConfig"
+										onclick="return true;">
+									</ice:menuItem>
+									<ice:menuItem value="Transaction History" id="dataCompare"
+										onclick="return true;">
+									</ice:menuItem>
+								</ice:menuBar>
+							</ice:panelGroup>
+						</f:facet>
+
+						<f:facet name="second">
+							<ice:panelGroup style="padding: 10px;">
+
+					<ice:panelGrid styleClass="parentGrid" columns="6">
+
+								<ice:outputText styleClass="headerTextLogin_reg" colspan="6"
+									value="Basic Details" />
+										<ice:outputText></ice:outputText>
+										<ice:outputText></ice:outputText>	
+										<ice:outputText></ice:outputText>
+										<ice:outputText></ice:outputText>
+										<ice:outputText></ice:outputText>
+											
+									
+								
+
+									<ice:outputText styleClass="labelText_reg" align="right"
+										value="First Name :"></ice:outputText>
+									<ice:outputText styleClass="labelText_reg_Wb" align="right"
+                                        value="#{portfolio.firstName}"></ice:outputText>
+									
+
+
+									<ice:outputText styleClass="labelText_reg" align="right"
+										value="Middle Name"></ice:outputText>
+									<ice:outputText styleClass="labelText_reg_Wb" align="right"
+                                        value="#{portfolio.middleName}"></ice:outputText>
+                                    
+
+
+									<ice:outputText styleClass="labelText_reg" value="Last Name"
+										align="right"></ice:outputText>
+									<ice:outputText styleClass="labelText_reg_Wb" align="right"
+                                        value="#{portfolio.lastName}"></ice:outputText>
+									
+
+
+
+
+
+
+
+
+									<ice:outputText styleClass="labelText_reg" value="Gender *"
+										align="right"></ice:outputText>
+                                   <ice:outputText styleClass="labelText_reg_Wb" align="right"
+                                        value="Male"></ice:outputText>
+                                
+							
+
+								
+
+
+
+
+									<ice:outputText styleClass="labelText_reg"
+										value="Email *"></ice:outputText>
+									<ice:outputText styleClass="labelText_reg_Wb" align="right"
+                                        value="#{portfolio.email}"></ice:outputText>
+                                        
+							
+
+									 
+                                           
+                                        <ice:outputText></ice:outputText> 
+                                        <ice:outputText></ice:outputText>  
+                               
+                                        <ice:outputText></ice:outputText>
+                                        <ice:outputText></ice:outputText>   
+                                        <ice:outputText></ice:outputText>
+                                        <ice:outputText></ice:outputText>   
+                                        <ice:outputText></ice:outputText>
+                                        <ice:outputText></ice:outputText>
+                               
+								
+							
+								<ice:outputText styleClass="headerTextLogin_reg"
+									value="Suggestions" />
+
+									
+								           
+                                        <ice:outputText></ice:outputText> 
+                                        <ice:outputText></ice:outputText>  
+                                        <ice:outputText></ice:outputText> 
+                                        <ice:outputText></ice:outputText>   
+                                        <ice:outputText></ice:outputText>  
+                                            
+                                        <ice:outputText></ice:outputText>
+                                        <ice:outputText></ice:outputText>   
+                                        <ice:outputText></ice:outputText>
+                                        <ice:outputText></ice:outputText>   
+                                        <ice:outputText></ice:outputText>
+                                        <ice:outputText></ice:outputText>
+                                    
+
+									<ice:outputText styleClass="labelText_reg"
+										value="Allocation Category"></ice:outputText>
+										<ice:outputText styleClass="labelText_reg_Wb" align="right"
+                                        value="#{portfolio.ac}"></ice:outputText>
+									
+                                        <ice:outputText></ice:outputText>
+                                        <ice:outputText></ice:outputText>   
+                                        <ice:outputText></ice:outputText>
+                                        <ice:outputText></ice:outputText>
+                                            
+                                    
+									<ice:outputText styleClass="labelText_reg"
+										value="Currency"></ice:outputText>
+										<ice:outputText styleClass="labelText_reg_Wb" align="right"
+                                        value="#{portfolio.currency}"></ice:outputText>
+									
+
+                                    <ice:outputText></ice:outputText>
+                                    <ice:outputText></ice:outputText>
+									<ice:outputText></ice:outputText>
+									<ice:outputText></ice:outputText>	
+								
+								
+                                                                        
+                                    <ice:outputText styleClass="labelText_reg" value="Current Asset Value"></ice:outputText>
+                                    <ice:outputText styleClass="labelText_reg_Wb" align="right"
+                                        value="#{portfolio.cav}"></ice:outputText>
+                                    
+                                    
+                                        <ice:outputText></ice:outputText>
+                                        <ice:outputText></ice:outputText>   
+                                        <ice:outputText></ice:outputText>
+                                        <ice:outputText></ice:outputText>
+                                            
+                                    
+                                    <ice:outputText styleClass="labelText_reg" value="Commodity %"></ice:outputText>
+                                    <ice:outputText styleClass="labelText_reg_Wb" align="right"
+                                        value="#{portfolio.commodity}"></ice:outputText>
+                                    
+                                    
+                                    <ice:outputText></ice:outputText>
+                                    <ice:outputText></ice:outputText>   
+                                    
+                                        <ice:outputText></ice:outputText>
+                                        <ice:outputText></ice:outputText> 
+                                
+                                    <ice:outputText styleClass="labelText_reg" value="Equity %"></ice:outputText>
+                                    <ice:outputText styleClass="labelText_reg_Wb" align="right"
+                                        value="#{portfolio.equity}"></ice:outputText>
+                                    
+                                        <ice:outputText></ice:outputText>
+                                        <ice:outputText></ice:outputText>   
+                                        <ice:outputText></ice:outputText>
+                                        <ice:outputText></ice:outputText>
+                                            
+                                    
+                                    <ice:outputText styleClass="labelText_reg" value="Fixed Income %"></ice:outputText>
+                                    <ice:outputText styleClass="labelText_reg_Wb" align="right"
+                                        value="#{portfolio.fip}"></ice:outputText>
+                                        <ice:outputText></ice:outputText>
+                                        <ice:outputText></ice:outputText>   
+                                        <ice:outputText></ice:outputText>
+                                        <ice:outputText></ice:outputText>
+                                            
+                                    
+                                    <ice:outputText styleClass="labelText_reg" value="FOREX %"></ice:outputText>
+                                    <ice:outputText styleClass="labelText_reg_Wb" align="right"
+                                        value="#{portfolio.forex}"></ice:outputText>
+                                    
+
+								
+								                              
+                                    
+
+									<ice:outputText value=""></ice:outputText>
+									<ice:outputText value=""></ice:outputText>
+									<ice:outputText value=""></ice:outputText>
+									<ice:outputText value=""></ice:outputText>
+									
+									<br></br>
+								</ice:panelGrid>
+
+							</ice:panelGroup>
+						</f:facet>
+					</ice:panelDivider>
+				</ice:panelGroup>
+			</ice:panelGrid>
+		</f:view>
+	</ice:form>
+</div>
