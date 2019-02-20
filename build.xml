@@ -7,26 +7,20 @@
 <project basedir="." default="package" name="ITSF">
     <property environment="env"/>
     <property name="debuglevel" value="source,lines,vars"/>
-   	<property name="TOMCAT_HOME" value="D:\PeopleSoft Project\Docker\apache-tomcat-8.5.38" />
+   	<property name="TOMCAT_HOME" value="" />
 	
     <property name="project.name" value="${ant.project.name}" />
      <property name="project.web.dir" value="WebContent" />
    <property name="project.lib.dir" value="${project.web.dir}/WEB-INF/lib" />
       <property name="project.war" value="build/${project.name}.war" />
-      <property name="project.runtime.lib" value="${TOMCAT_HOME}/lib" />
-      <property name="project.deploy.location" value="${TOMCAT_HOME}/webapps" />
     
     <path id="EAR Libraries.libraryclasspath"/>
    
-	<path id="classpath.runtime">
-			<fileset dir="${project.runtime.lib}" includes="*.jar" />
-		</path>
 		<path id="classpath.lib">
 			<fileset dir="${project.lib.dir}" includes="*.jar" />
 		</path>
 		<path id="classpath">
 			<pathelement location="WebContent/WEB-INF/classes" />
-			<path refid="classpath.runtime" />
 			<path refid="classpath.lib" />
 			<path refid="EAR Libraries.libraryclasspath"/>
 		</path>
@@ -48,13 +42,7 @@
                 <exclude name="**/*.java"/>
             </fileset>
         </copy>
-     	 <echo message="copyWsClient"/>
-        <copy includeemptydirs="false" todir="WebContent/WEB-INF/classes">
-            <fileset dir="wsClient">
-                <exclude name="**/*.launch"/>
-                <exclude name="**/*.java"/>
-            </fileset>
-        </copy>
+     	
     </target>
     <target name="clean">
         <delete dir="WebContent/WEB-INF/classes"/>
@@ -67,7 +55,6 @@
         <javac debug="true" debuglevel="${debuglevel}" destdir="WebContent/WEB-INF/classes" includeantruntime="false" >
             <src path="javaSource"/>
             <src path="resources"/>
-            <src path="wsClient"/>
             <classpath refid="classpath"/>
         </javac>
     </target>
