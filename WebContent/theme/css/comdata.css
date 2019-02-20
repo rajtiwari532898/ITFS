@@ -1,0 +1,250 @@
+.clsLabel{
+font-family:arial;
+font-size:12px;
+color:#000000;
+padding-top:10px;
+padding-bottom:10px;
+padding-left:5px;
+}
+
+.clsSubHeading1{
+font-family:arial;
+font-size:13px;
+font-weight:bold;
+color:#000000;
+text-decoration:underline;
+}
+
+.mandatory{
+	font-family: Arial, Verdana, Helvetica, sans-serif;
+	font-size:12px;
+	font-weight:bold;
+	color:#b40e69;
+	padding-right:3px;
+}
+
+
+.tablec {
+	background-color: #f0ece7;
+}
+
+
+.links{
+font-family:arial;
+font-size:12px;
+color:blue;
+}
+
+.button {
+	margin-right:8px;
+	margin-left:8px;
+	font-family: Arial, Verdana, Helvetica, sans-serif;
+	font-size:12px;
+	font-weight:normal;	
+	color:#000000;
+	padding:2px;
+	background-image:url("images\button-img1.png") ;
+	background-repeat: no-repeat; 
+        background-color: transparent;
+	border:0px none;
+	height:30px;
+    } 
+    
+  .button1 {
+	margin-right:8px;
+	margin-left:8px;
+	font-family: Arial, Verdana, Helvetica, sans-serif;
+	font-size:12px;
+	font-weight:normal;	
+	color:#000000;
+	padding:2px;
+	background-image:url("images\button-img1.jpeg") ;
+	background-repeat: no-repeat; 
+        background-color: transparent;
+	border:0px none;
+	height:30px;
+    }   
+
+.btnInActive {
+	margin-right:8px;
+	margin-left:8px;
+	font-family: Arial, Verdana, Helvetica, sans-serif;
+	font-size:12px;
+	font-weight:normal;	
+	color:#000000;
+	padding:2px;
+	background-image:url("images\Temorarily Inactive.JPG") ;
+	background-repeat: no-repeat; 
+        background-color: transparent;
+	border:0px none;
+	height:30px;
+    } 
+.buttonActive {
+	margin-right:8px;
+	margin-left:8px;
+	font-family: Arial, Verdana, Helvetica, sans-serif;
+	font-size:12px;
+	font-weight:normal;	
+	color:#000000;
+	padding:2px;
+	background-image:url("images\button1-img1.png") ;
+	background-repeat: no-repeat; 
+        background-color: transparent;
+	border:0px none;
+	height:30px;
+    } 
+.longbtn {
+	margin-right:8px;
+	margin-left:8px;
+	font-family: Arial, Verdana, Helvetica, sans-serif;
+	font-size:12px;
+	font-weight:normal;	
+	color:#000000;
+	padding:2px;
+	background-image:url("images\button-img2.png") ;
+	background-repeat: no-repeat; 
+        background-color: transparent;
+	border:0px none;
+	height:30px;
+    } 
+
+
+.rowItem
+{
+	background-color:#f0ece7;
+	color:BLACK;
+	height:25px;
+	text-align:left;
+	padding-left:5px;
+	font-size:14
+}
+.TableHeader{
+background-color: #f0ece7;
+font-family:  Arial,Verdana, Helvetica, sans-serif;
+font-size: 12px;
+font-weight:bold;
+color:#000000;
+letter-spacing:1px;
+float:center;
+background-color:rgb(255,0,0);
+
+}
+.Msgalerts {
+	font-family:arial;
+	font-size:13px;
+	font-weight:bold;
+	color:#FFFFFF;
+	text-decoration:underline;
+	padding:2px;
+	background-image:url("images\green.bmp") ;
+	background-repeat: no-repeat; 
+        background-color: transparent;
+	border:0px none;
+	height:30px;
+
+}
+
+.mAtxt {
+	font-family:arial;
+	font-size:13px;
+	font-weight:normal;
+	color:#FFFFFF;
+	padding:2px;
+	background-image:url("images\mA.bmp") ;
+	background-repeat: no-repeat; 
+        background-color: transparent;
+	border:0px none;
+	height:30px;
+
+}
+.clsROWLabel{
+font-family:arial;
+font-size:12px;
+color:#000000;
+padding-top:10px;
+padding-bottom:10px;
+padding-left:5px;
+text-decoration:underline;
+font-weight:bold;
+}
+.Greenbtn {
+	margin-right:8px;
+	margin-left:8px;
+	font-family: Arial, Verdana, Helvetica, sans-serif;
+	font-size:12px;
+	font-weight:normal;	
+	color:#000000;
+	padding:2px;
+	background-image:url("images\green.bmp") ;
+	background-repeat: no-repeat; 
+        background-color: transparent;
+	border:0px none;
+	height:30px;
+    } 
+.clsROWLabel{
+font-family:arial;
+font-size:12px;
+color:#000000;
+padding-top:10px;
+padding-bottom:10px;
+padding-left:5px;
+text-decoration:underline;
+font-weight:bold;
+}
+.Fhbtn {
+	margin-right:8px;
+	margin-left:8px;
+	font-family: Arial, Verdana, Helvetica, sans-serif;
+	font-size:12px;
+	font-weight:normal;	
+	color:#000000;
+	padding:2px;
+	background-image:url("images\Temorarily Inactive1.jpg") ;
+	background-repeat: no-repeat; 
+        background-color: transparent;
+	border:0px none;
+	height:30px;
+    }
+.Newsbtn {
+	margin-right:8px;
+	margin-left:8px;
+	font-family: Arial, Verdana, Helvetica, sans-serif;
+	font-size:12px;
+	font-weight:normal;	
+	color:#000000;
+	padding:2px;
+	background-image:url("images\button-img2.jpg") ;
+	background-repeat: no-repeat; 
+        background-color: transparent;
+	border:0px none;
+	height:30px;
+    } 
+
+.Alertbtn {
+	margin-right:8px;
+	margin-left:8px;
+	font-family: Arial, Verdana, Helvetica, sans-serif;
+	font-size:12px;
+	font-weight:normal;	
+	color:#000000;
+	padding:2px;
+	background-image:url("images\button-img3.jpg") ;
+	background-repeat: no-repeat; 
+        background-color: transparent;
+	border:0px none;
+	height:30px;
+    }
+.Selectbtn {
+	margin-right:8px;
+	margin-left:8px;
+	font-family: Arial, Verdana, Helvetica, sans-serif;
+	font-size:12px;
+	font-weight:normal;	
+	color:#000000;
+	padding:2px;
+	background-image:url("images\button-img3.png") ;
+	background-repeat: no-repeat; 
+        background-color: transparent;
+	border:0px none;
+	height:30px;
+    } 
