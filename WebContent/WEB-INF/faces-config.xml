@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<faces-config xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_1_2.xsd"
+	version="1.2">
+	<application>
+		<view-handler>com.icesoft.faces.facelets.D2DFaceletViewHandler</view-handler>
+		<!--
+			<el-resolver>org.springframework.web.jsf.el.SpringBeanFacesELResolver</el-resolver>
+		-->
+		<variable-resolver>org.springframework.web.jsf.DelegatingVariableResolver</variable-resolver>
+		
+		<locale-config>
+			<default-locale>en</default-locale>
+			<supported-locale>fr</supported-locale>
+		</locale-config>
+		<message-bundle>/Messages</message-bundle>
+		<message-bundle>/validation-messages</message-bundle>
+	</application>
+
+	<lifecycle>
+		 <phase-listener>com.tcs.common.MessageListener</phase-listener>
+	</lifecycle>
+
+	
+        
+              
+	<managed-bean>
+		<managed-bean-name>LoginBean</managed-bean-name>
+		<managed-bean-class>com.tcs.dvt.bean.LoginBean</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+								
+	<managed-bean>
+		<managed-bean-name>mainMenu</managed-bean-name>
+		<managed-bean-class>com.tcs.dvt.bean.MainMenuBean</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>		
+	</managed-bean>	
+	
+	<managed-bean>
+		<managed-bean-name>footer</managed-bean-name>
+		<managed-bean-class>com.tcs.dvt.bean.FooterBean</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>		
+	</managed-bean>	
+	
+	<managed-bean>
+		<managed-bean-name>transDet</managed-bean-name>
+		<managed-bean-class>com.tcs.dvt.bean.TransactionDetBean</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>		
+	</managed-bean>	
+	
+	<managed-bean>
+		<managed-bean-name>customer</managed-bean-name>
+		<managed-bean-class>com.tcs.dvt.bean.UserRegistrationBean</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>		
+	</managed-bean>	
+	
+	
+    <managed-bean>
+		<managed-bean-name>loanRequests</managed-bean-name>
+		<managed-bean-class>com.tcs.dvt.bean.LoanRequests</managed-bean-class>
+		<managed-bean-scope>none</managed-bean-scope>		
+	</managed-bean>	
+	
+	<managed-bean>
+        <managed-bean-name>portfolio</managed-bean-name>
+        <managed-bean-class>com.tcs.dvt.bean.Portfolio</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>       
+    </managed-bean> 
+	
+	
+    	
+	<navigation-rule>
+	 <navigation-case>
+		<from-outcome>WelcomePage</from-outcome>
+		<to-view-id>/WEB-INF/jsfpages/homePage.xhtml</to-view-id>
+	</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+	 <navigation-case>
+		<from-outcome>pdfPATH</from-outcome>
+		<to-view-id>/WEB-INF/jsfpages/dispute1.xhtml</to-view-id>
+	</navigation-case>
+	</navigation-rule>
+		
+	<navigation-rule>
+	 <navigation-case>
+		<from-outcome>userRegistration</from-outcome>
+		<to-view-id>/WEB-INF/inc-jsfpages/customerRegistration.xhtml</to-view-id>
+	</navigation-case>
+	</navigation-rule>
+	
+	   <navigation-rule>
+     <navigation-case>
+        <from-outcome>portfolioResult</from-outcome>
+        <to-view-id>/WEB-INF/jsfpages/portfolioResult.xhtml</to-view-id>
+    </navigation-case>
+    </navigation-rule>
+
+<navigation-rule>
+	 <navigation-case>
+		<from-outcome>loanRequestList</from-outcome>
+		<to-view-id>/WEB-INF/inc-jsfpages/loanRequestList.xhtml</to-view-id>
+	</navigation-case>
+	</navigation-rule>
+		
+	
+	
+	
+	<navigation-rule>
+		<display-name>*</display-name>
+		<from-view-id>*</from-view-id>
+	<navigation-case>
+		<from-outcome>addException</from-outcome>
+		<to-view-id>/WEB-INF/jsfpages/addException.xhtml</to-view-id>
+	</navigation-case>
+
+<navigation-case>
+		<from-action>#{mainMenu.dbConfig}</from-action>
+		<from-outcome>dbConfig</from-outcome>
+		<to-view-id>/WEB-INF/jsfpages/dbConfigPage.xhtml</to-view-id>
+</navigation-case>
+
+<navigation-case>
+			<from-action>#{cardLogin.getHomePage}</from-action>
+			<from-outcome>fail</from-outcome>
+			<to-view-id>/WEB-INF/jsfpages/bigDataloginPage.xhtml</to-view-id>
+		</navigation-case>
+<navigation-case>
+			<from-action>#{cardLogin.logout}</from-action>
+			<from-outcome>logout</from-outcome>
+			<to-view-id>/WEB-INF/jsfpages/bigDataloginPage.xhtml</to-view-id>
+		</navigation-case>	
+<navigation-case>
+	<from-action>#{cardLogin.clearButton}</from-action>
+	<from-outcome>fail</from-outcome>
+	<to-view-id>/WEB-INF/jsfpages/bigDataloginPage.xhtml</to-view-id>
+</navigation-case>	
+<navigation-case>
+			<from-action>#{cardLogin.getHomepage}</from-action>
+			<from-outcome>AccountSummary</from-outcome>
+		<to-view-id>/WEB-INF/jsfpages/homePage.xhtml</to-view-id>
+</navigation-case>	
+
+<navigation-case>
+		<from-action>#{editProfile.editProfile}</from-action>
+		<from-outcome>editProfile</from-outcome>
+		<to-view-id>/WEB-INF/jsfpages/editCardHolderProfile.xhtml</to-view-id>
+</navigation-case>
+<navigation-case>
+		<from-action>#{editProfile.updateProfile}</from-action>
+		<from-outcome>AccountSummary</from-outcome>
+		<to-view-id>/WEB-INF/jsfpages/homePage.xhtml</to-view-id>
+</navigation-case>	
+<navigation-case>
+		<from-action>#{editProfile.getHomepage}</from-action>
+		<from-outcome>AccountSummary</from-outcome>
+		<to-view-id>/WEB-INF/jsfpages/homePage.xhtml</to-view-id>
+</navigation-case>	
+<navigation-case>
+		<from-action>#{editProfile.continueProfile}</from-action>
+		<from-outcome>confirmProfile</from-outcome>
+		<to-view-id>/WEB-INF/jsfpages/ConfirmCardHolderProfile.xhtml</to-view-id>
+</navigation-case>	
+
+<!-- End of Edit Profile -->
+
+
+<!--  Display Beans Rules -->		
+<navigation-case>
+		<from-action>#{mainMenu.logout}</from-action>
+		<from-outcome>logout</from-outcome>
+		<to-view-id>/WEB-INF/jsfpages/bigDataloginPage.xhtml</to-view-id>
+</navigation-case>
+
+<navigation-case>
+        <from-action>#{mainMenu.portfolioMgm}</from-action>
+        <from-outcome>portfolio</from-outcome>
+        <to-view-id>/WEB-INF/jsfpages/portfolioManagement.xhtml</to-view-id>
+</navigation-case>
+
+<navigation-case>
+        <from-action>#{mainMenu.historicalAnalysis}</from-action>
+        <from-outcome>logout</from-outcome>
+        <to-view-id>/WEB-INF/jsfpages/historicalAnalysis.xhtml</to-view-id>
+</navigation-case>  	
+
+<navigation-case>
+		<from-action>#{mainMenu.homePage}</from-action>
+		<from-outcome>AccountSummary</from-outcome>
+		<to-view-id>/WEB-INF/jsfpages/homePage.xhtml</to-view-id>
+</navigation-case>
+<navigation-case>
+		<from-action>#{mainMenu.userRegistration}</from-action>
+		<from-outcome>Registration</from-outcome>
+		<to-view-id>/WEB-INF/inc-jsfpages/customerRegistration.xhtml</to-view-id>
+</navigation-case>
+
+<navigation-case>
+		<from-action>#{mainMenu.test}</from-action>
+		<from-outcome>test</from-outcome>
+		<to-view-id>/WEB-INF/jsfpages/test.xhtml</to-view-id>
+</navigation-case>
+<navigation-case>
+		<from-action>#{mainMenu.editProfile}</from-action>
+		<from-outcome>editProfile</from-outcome>
+		<to-view-id>/WEB-INF/jsfpages/editCardHolderProfile.xhtml</to-view-id>
+</navigation-case>
+<navigation-case>
+		<from-action>#{mainMenu.loginPage}</from-action>
+		<from-outcome>login</from-outcome>
+		<to-view-id>/WEB-INF/jsfpages/bigDataloginPage.xhtml</to-view-id>
+</navigation-case>
+<navigation-case>
+		<from-action>#{mainMenu.lostCard}</from-action>
+		<from-outcome>contactUs</from-outcome>
+		<to-view-id>/WEB-INF/jsfpages/contactUsPage.xhtml</to-view-id>
+</navigation-case>
+
+<navigation-case>
+		<from-action>#{footer.contactUsPage}</from-action>
+		<from-outcome>contactUs</from-outcome>
+		<to-view-id>/WEB-INF/jsfpages/contactUsPage.xhtml</to-view-id>
+</navigation-case>
+
+<navigation-case>
+		<from-action>#{footer.termsCondn}</from-action>
+		<from-outcome>termsCondn</from-outcome>
+		<to-view-id>/WEB-INF/jsfpages/termsCondPage.xhtml</to-view-id>
+</navigation-case>
+
+<navigation-case>
+		<from-action>#{footer.policy}</from-action>
+		<from-outcome>policy</from-outcome>
+		<to-view-id>/WEB-INF/jsfpages/policyPage.xhtml</to-view-id>
+</navigation-case>
+
+<navigation-case>
+		<from-action>#{footer.contactUsLogin}</from-action>
+		<from-outcome>contactUs</from-outcome>
+		<to-view-id>/WEB-INF/jsfpages/contactUsPageLogin.xhtml</to-view-id>
+</navigation-case>
+<navigation-case>
+		<from-action>#{footer.termsCondLogin}</from-action>
+		<from-outcome>termsCondn</from-outcome>
+		<to-view-id>/WEB-INF/jsfpages/termsCondPageLogin.xhtml</to-view-id>
+</navigation-case>
+
+<navigation-case>
+		<from-action>#{footer.policyLogin}</from-action>
+		<from-outcome>policy</from-outcome>
+		<to-view-id>/WEB-INF/jsfpages/policyPageLogin.xhtml</to-view-id>
+</navigation-case>
+
+<navigation-case>
+		<from-action>#{footer.disputeTrans}</from-action>
+		<from-outcome>disputetran</from-outcome>
+		<to-view-id>/WEB-INF/jsfpages/disputeTransPage.xhtml</to-view-id>
+</navigation-case>
+
+<navigation-case>
+		<from-action>#{footer.lostCardPage}</from-action>
+		<from-outcome>lostcard</from-outcome>
+		<to-view-id>/WEB-INF/jsfpages/lostCardPage.xhtml</to-view-id>
+</navigation-case>
+
+
+<navigation-case>
+		<from-action>#{footer.disputeTransLogin}</from-action>
+		<from-outcome>disputetran</from-outcome>
+		<to-view-id>/WEB-INF/jsfpages/disputeTransPageLogin.xhtml</to-view-id>
+</navigation-case>
+
+<navigation-case>
+		<from-action>#{footer.lostCardLogin}</from-action>
+		<from-outcome>lostcard</from-outcome>
+		<to-view-id>/WEB-INF/jsfpages/lostCardPageLogin.xhtml</to-view-id>
+</navigation-case>
+<!-- End of Display Beans Rules -->
+	
+<navigation-case>
+		<from-action>#{tranDet.getTransactionList}</from-action>
+		<from-outcome>transDet</from-outcome>
+		<to-view-id>/WEB-INF/jsfpages/transactionDet.xhtml</to-view-id>
+	</navigation-case>
+		<navigation-case>
+		<from-action>#{tranDet.yesAction}</from-action>
+		<from-outcome>transDet</from-outcome>
+		<to-view-id>/WEB-INF/jsfpages/transactionDet.xhtml</to-view-id>
+	</navigation-case>
+ <navigation-case>
+		<from-action>#{cardLogin.getTransDet}</from-action>
+		<from-outcome>transDet</from-outcome>
+		<to-view-id>/WEB-INF/jsfpages/transactionDet.xhtml</to-view-id>
+</navigation-case>
+
+	</navigation-rule>
+	
+	<validator>
+		<display-name>AlphanumericValidation</display-name>
+		<validator-id>AlphanumericValidation</validator-id>
+		<validator-class>com.comdata.posa.validators.AlphanumericValidation</validator-class>
+	</validator>
+	<validator>
+		<display-name>NumericValidation</display-name>
+		<validator-id>NumericValidation</validator-id>
+		<validator-class>com.comdata.posa.validators.NumericValidation</validator-class>
+	</validator>
+		<validator>
+		<display-name>PhoneValidation</display-name>
+		<validator-id>PhoneValidation</validator-id>
+		<validator-class>com.comdata.posa.validators.PhoneValidation</validator-class>
+	</validator>
+	
+	
+		<validator>
+		<display-name>DoubleValidator</display-name>
+		<validator-id>DoubleValidator</validator-id>
+		<validator-class>com.comdata.posa.validators.DoubleValidator</validator-class>
+	</validator>
+	
+	<validator>
+		<display-name>PostcodeValidation</display-name>
+		<validator-id>PostcodeValidation</validator-id>
+		<validator-class>com.comdata.posa.validators.PostcodeValidation</validator-class>
+	</validator>
+	
+	<validator>
+		<display-name>EmailValidator</display-name>
+		<validator-id>EmailValidator</validator-id>
+		<validator-class>com.comdata.posa.validators.EmailValidator</validator-class>
+	</validator>
+	
+<navigation-rule>
+	 <navigation-case>
+		<from-outcome>BGScore</from-outcome>
+		<to-view-id>/WEB-INF/inc-jsfpages/bGScore.xhtml</to-view-id>
+	</navigation-case>
+</navigation-rule>
+	
+</faces-config>
+
+
